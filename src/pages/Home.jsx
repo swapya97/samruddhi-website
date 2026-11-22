@@ -140,7 +140,7 @@ export default function Home({ onOpenQuote }) {
         style={{ height: '300vh' }}
       >
         {/* Pinned Viewport Container (Finnect Sticky Hero) */}
-        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center pt-36 sm:pt-44 pb-12 sm:pb-16 bg-brand-navyDeep">
+        <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between pt-28 sm:pt-32 pb-3 sm:pb-4 bg-brand-navyDeep">
           {/* Full Authentic Brick Manufacturing Plant Background Image */}
           <img
             src="/images/hero-factory.jpg"
@@ -199,37 +199,37 @@ export default function Home({ onOpenQuote }) {
             </div>
           </div>
 
-        {/* MAIN HERO CONTENT CONTAINER */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full pt-10 sm:pt-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* MAIN HERO CONTENT CONTAINER (Flex centered without overflow) */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full flex-1 flex items-center my-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full">
             
             {/* HERO TEXT (Left Column - Transitions Smoothly on Scroll & Timer) */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-5">
+            <div className="lg:col-span-7 text-center lg:text-left space-y-3.5 sm:space-y-4">
               
               {/* Finnect-Style Orchestration Core Eyebrow */}
-              <div className="inline-flex items-center gap-2 text-[10.5px] sm:text-xs font-mono tracking-widest text-brand-gold uppercase">
+              <div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono tracking-widest text-brand-gold uppercase">
                 <span className="w-2 h-2 rounded-full bg-brand-gold animate-ping" />
                 <span>SAMRUDDHI PRODUCTION CORE • 30,000 BRICKS/DAY RUN</span>
               </div>
 
               {/* Animated Headline & Subtitle Container keyed to activeStage */}
-              <div className="min-h-[220px] sm:min-h-[260px] flex flex-col justify-center">
+              <div className="min-h-[160px] sm:min-h-[190px] xl:min-h-[210px] flex flex-col justify-center">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeStage}
-                    initial={{ opacity: 0, y: 22 }}
+                    initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -22 }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
-                    className="space-y-4"
+                    exit={{ opacity: 0, y: -16 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="space-y-3"
                   >
                     {/* Stage Kicker */}
-                    <p className="text-xs sm:text-sm font-semibold tracking-[4px] sm:tracking-[5px] uppercase text-white/90 font-mono">
+                    <p className="text-[11px] sm:text-xs font-semibold tracking-[3px] sm:tracking-[4px] uppercase text-white/90 font-mono">
                       {currentStation.kicker}
                     </p>
 
                     {/* Headline with Finnect .dot accent */}
-                    <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white font-display tracking-tight leading-[1.12]">
+                    <h1 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold text-white font-display tracking-tight leading-[1.12]">
                       <span className="block">{currentStation.titleLine1}</span>
                       <span className="block text-brand-gold">
                         {currentStation.titleLine2}
@@ -238,7 +238,7 @@ export default function Home({ onOpenQuote }) {
                     </h1>
 
                     {/* Subtitle */}
-                    <p className="text-sm sm:text-base xl:text-lg text-slate-200 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    <p className="text-xs sm:text-sm xl:text-base text-slate-200 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
                       {currentStation.subtitle}
                     </p>
                   </motion.div>
@@ -246,10 +246,10 @@ export default function Home({ onOpenQuote }) {
               </div>
 
               {/* Dual Action Buttons (Triistic Style: Gold + Navy) */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <div className="pt-1 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
                 <Link
                   to="/products"
-                  className="w-full sm:w-auto min-w-[200px] px-8 py-4 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-brand-navy font-bold text-sm tracking-wide shadow-xl hover:shadow-brand-gold/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 uppercase group"
+                  className="w-full sm:w-auto min-w-[190px] px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-brand-gold hover:bg-brand-goldHover text-brand-navy font-bold text-xs sm:text-sm tracking-wide shadow-xl hover:shadow-brand-gold/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 uppercase group"
                 >
                   <span>Explore Our Products</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -257,24 +257,24 @@ export default function Home({ onOpenQuote }) {
 
                 <button
                   onClick={onOpenQuote}
-                  className="w-full sm:w-auto min-w-[180px] px-8 py-4 rounded-xl bg-brand-navy hover:bg-brand-navyCard text-white border-2 border-white/30 hover:border-brand-gold font-bold text-sm transition-all flex items-center justify-center gap-2 uppercase"
+                  className="w-full sm:w-auto min-w-[170px] px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-brand-navy hover:bg-brand-navyCard text-white border-2 border-white/30 hover:border-brand-gold font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 uppercase"
                 >
                   <span>Request a Quote</span>
                 </button>
               </div>
 
               {/* Quick Operational Metrics Strip */}
-              <div className="pt-5 border-t border-white/15 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-left font-mono">
+              <div className="pt-3.5 mt-1 border-t border-white/15 grid grid-cols-3 gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0 text-left font-mono">
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-brand-gold">30,000</div>
+                  <div className="text-base sm:text-lg font-bold text-brand-gold">30,000</div>
                   <div className="text-[10px] text-slate-300">Bricks/Day Planned</div>
                 </div>
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-white">±1.5mm</div>
+                  <div className="text-base sm:text-lg font-bold text-white">±1.5mm</div>
                   <div className="text-[10px] text-slate-300">Sharp Edge Finish</div>
                 </div>
                 <div>
-                  <div className="text-lg sm:text-xl font-bold text-brand-gold">100%</div>
+                  <div className="text-base sm:text-lg font-bold text-brand-gold">100%</div>
                   <div className="text-[10px] text-slate-300">Hydraulic Pressed</div>
                 </div>
               </div>
@@ -283,25 +283,22 @@ export default function Home({ onOpenQuote }) {
             {/* HERO LOGO EMBLEM CARD (Triistic Signature Floating Card with Live Stage Sync) */}
             <div className="lg:col-span-5 flex justify-center">
               <div 
-                className="w-full max-w-[380px] bg-white rounded-3xl p-7 sm:p-8 text-center relative z-10 transition-all duration-300"
-                style={{
-                  boxShadow: '0 0 0 8px rgba(255, 255, 255, .18), 0 0 0 11px rgba(235, 173, 33, .85), 0 30px 70px rgba(3, 17, 58, .55)'
-                }}
+                className="w-full max-w-[340px] sm:max-w-[360px] bg-white rounded-2xl p-5 sm:p-6 text-center relative z-10 transition-all duration-300 shadow-[0_0_0_6px_rgba(255,255,255,0.15),0_0_0_9px_rgba(235,173,33,0.85),0_25px_60px_rgba(3,17,58,0.55)]"
               >
                 {/* Brand Logo Symbol */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-brand-gold to-brand-goldHover mx-auto flex items-center justify-center shadow-md mb-4">
-                  <Layers className="w-9 h-9 sm:w-11 sm:h-11 text-brand-navy" />
+                <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-brand-gold to-brand-goldHover mx-auto flex items-center justify-center shadow-md mb-2.5">
+                  <Layers className="w-7 h-7 sm:w-9 sm:h-9 text-brand-navy" />
                 </div>
 
                 {/* Company Name */}
-                <h3 className="text-2xl sm:text-3xl font-black font-display text-brand-navy tracking-tight leading-none mb-1">
+                <h3 className="text-xl sm:text-2xl font-black font-display text-brand-navy tracking-tight leading-none mb-1">
                   SAMRUDDHI
                 </h3>
-                <p className="text-xs sm:text-sm font-mono tracking-widest uppercase text-brand-goldInk font-bold mb-3">
+                <p className="text-[11px] sm:text-xs font-mono tracking-widest uppercase text-brand-goldInk font-bold mb-2.5">
                   ENTERPRISES
                 </p>
 
-                <div className="w-12 h-0.5 bg-brand-gold mx-auto mb-3" />
+                <div className="w-10 h-0.5 bg-brand-gold mx-auto mb-2.5" />
 
                 {/* Reactive Stage Badge */}
                 <AnimatePresence mode="wait">
@@ -311,34 +308,34 @@ export default function Home({ onOpenQuote }) {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3 }}
-                    className="inline-block px-3 py-1 rounded-full bg-amber-50 text-brand-goldInk border border-brand-gold/40 text-[11px] font-mono font-bold uppercase mb-4"
+                    className="inline-block px-3 py-0.5 rounded-full bg-amber-50 text-brand-goldInk border border-brand-gold/40 text-[10px] font-mono font-bold uppercase mb-2.5"
                   >
                     {currentStation.cardBadge}
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Live Stage Inspection Highlights */}
-                <div className="space-y-2 text-left text-xs bg-brand-lightBg p-3.5 rounded-xl border border-brand-line">
+                <div className="space-y-1.5 text-left text-xs bg-brand-lightBg p-2.5 sm:p-3 rounded-xl border border-brand-line">
                   <div className="flex justify-between items-center pb-1 border-b border-brand-line/60">
-                    <span className="text-brand-muted font-mono">{currentStation.cardMetricTitle}:</span>
-                    <strong className="text-brand-navy font-mono font-bold">{currentStation.cardMetricValue}</strong>
+                    <span className="text-brand-muted font-mono text-[11px]">{currentStation.cardMetricTitle}:</span>
+                    <strong className="text-brand-navy font-mono font-bold text-xs">{currentStation.cardMetricValue}</strong>
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-brand-text">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
                     <span>{currentStation.spec1}</span>
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-brand-text">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
                     <span>{currentStation.spec2}</span>
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-brand-text">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
                     <span>{currentStation.spec3}</span>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-brand-line flex items-center justify-center gap-2 text-xs font-mono text-brand-goldInk font-semibold">
-                  <ShieldCheck className="w-4 h-4 text-brand-gold" />
+                <div className="mt-3 pt-2.5 border-t border-brand-line flex items-center justify-center gap-2 text-[11px] font-mono text-brand-goldInk font-semibold">
+                  <ShieldCheck className="w-3.5 h-3.5 text-brand-gold shrink-0" />
                   <span>Tested Quality Batch Supply</span>
                 </div>
               </div>
@@ -347,16 +344,16 @@ export default function Home({ onOpenQuote }) {
           </div>
         </div>
 
-        {/* Finnect-Style Bottom HUD Progress Rail */}
-        <div className="absolute bottom-5 inset-x-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-[11px] font-mono text-slate-300">
-          <div className="hidden md:flex items-center gap-2">
+        {/* Finnect-Style Bottom HUD Progress Rail (Clean Dedicated Flex Baseline - Zero Collision) */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between text-[11px] font-mono text-slate-300 pb-1 sm:pb-2">
+          <div className="hidden md:flex items-center gap-2 bg-brand-navyDeep/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-brand-gold" />
-            <span>SAMRUDDHI PIPELINE • {currentStation.tag}</span>
+            <span className="text-[10.5px]">SAMRUDDHI PIPELINE • {currentStation.tag}</span>
           </div>
 
-          <div className="flex items-center gap-4 mx-auto md:mx-0">
+          <div className="flex items-center gap-3 mx-auto md:mx-0">
             {/* Clickable Station Selector Pills */}
-            <div className="flex items-center gap-1.5 bg-white/10 p-1 rounded-full border border-white/15">
+            <div className="flex items-center gap-1.5 bg-brand-navyDeep/80 backdrop-blur-md px-2 py-1 rounded-full border border-white/10 shadow-sm">
               {stations.map((s, idx) => (
                 <button
                   key={s.id}
@@ -372,7 +369,7 @@ export default function Home({ onOpenQuote }) {
               ))}
             </div>
 
-            <div className="flex items-center gap-1.5 text-slate-300">
+            <div className="flex items-center gap-1.5 text-slate-300 bg-brand-navyDeep/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10.5px]">
               <span className="text-brand-gold font-bold">SCROLL / CLICK</span>
               <ChevronRight className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
             </div>
