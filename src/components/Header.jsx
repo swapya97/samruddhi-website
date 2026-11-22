@@ -53,14 +53,15 @@ export default function Header({ onOpenQuote }) {
   return (
     <>
       {/* ========================================================
-          FINNECT-STYLE TRANSLUCENT FROSTED GLASS HEADER
+          SOLID DEEP NAVY HEADER (100% OPAQUE - NO TRANSPARENCY ON SCROLL)
           ======================================================== */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-white/10 ${
           isScrolled
-            ? 'bg-brand-navyDeep/92 backdrop-blur-md py-3.5 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-            : 'bg-brand-navyDeep/75 backdrop-blur-md py-4 sm:py-5 border-b border-white/10'
+            ? 'py-3 sm:py-3.5 shadow-[0_10px_35px_rgba(0,0,0,0.6)]'
+            : 'py-3.5 sm:py-4.5 shadow-md'
         }`}
+        style={{ backgroundColor: '#020b27' }}
       >
         <div className="max-w-[1560px] mx-auto px-3 sm:px-6 xl:px-8">
           <div className="flex items-center justify-between gap-2 xl:gap-4 flex-nowrap">
