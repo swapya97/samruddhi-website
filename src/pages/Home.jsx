@@ -141,10 +141,10 @@ export default function Home({ onOpenQuote }) {
       >
         {/* Pinned Viewport Container (Finnect Sticky Hero) */}
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between pt-28 sm:pt-32 pb-3 sm:pb-4 bg-brand-navyDeep">
-          {/* Full Authentic Brick Construction Site Background Image */}
+          {/* Authentic Samruddhi Enterprises Modern Plant & Production Line Background Image */}
           <img
-            src="/images/brick-construction.jpg"
-            alt="Samruddhi Enterprises Precision Fly Ash Bricks Construction Site"
+            src="/images/plant-setup.jpg"
+            alt="Samruddhi Enterprises Fly Ash Bricks Manufacturing Plant and Hydraulic Line"
             className="absolute inset-0 w-full h-full object-cover object-center z-0"
           />
 
