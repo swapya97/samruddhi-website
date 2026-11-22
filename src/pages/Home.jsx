@@ -140,7 +140,7 @@ export default function Home({ onOpenQuote }) {
         style={{ height: '300vh' }}
       >
         {/* Pinned Viewport Container (Finnect Sticky Hero) */}
-        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center pt-32 sm:pt-36 pb-12 sm:pb-16 bg-brand-navyDeep">
+        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center pt-36 sm:pt-44 pb-12 sm:pb-16 bg-brand-navyDeep">
           {/* Full Authentic Brick Manufacturing Plant Background Image */}
           <img
             src="/images/hero-factory.jpg"

@@ -12,7 +12,7 @@ export default function PageHero({
   bgImage = "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1600&q=80"
 }) {
   return (
-    <div className="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-brand-navyDeep">
+    <div className="relative pt-44 pb-20 md:pt-56 md:pb-28 overflow-hidden bg-brand-navyDeep">
       {/* Background with Dark Overlay and Finnect-style Grid */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20 transform scale-105 transition-transform duration-1000"

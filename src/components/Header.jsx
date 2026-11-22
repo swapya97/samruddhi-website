@@ -53,22 +53,22 @@ export default function Header({ onOpenQuote }) {
   return (
     <>
       {/* ========================================================
-          SOLID DEEP NAVY HEADER (EXTRA TALL & COMMANDING 110-120PX NAV)
+          SOLID DEEP NAVY HEADER (EXTRA TALL, GRAND, 100% OPAQUE NAV)
           ======================================================== */}
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-white/10 ${
           isScrolled
-            ? 'min-h-[96px] sm:min-h-[104px] py-5 sm:py-5.5 shadow-[0_16px_50px_rgba(0,0,0,0.75)]'
-            : 'min-h-[110px] sm:min-h-[120px] py-6 sm:py-7.5 shadow-lg'
+            ? 'min-h-[105px] sm:min-h-[115px] py-5 sm:py-6 shadow-[0_16px_50px_rgba(0,0,0,0.8)]'
+            : 'min-h-[125px] sm:min-h-[135px] py-7 sm:py-8 shadow-xl'
         } flex items-center`}
         style={{ backgroundColor: '#020b27' }}
       >
-        <div className="max-w-[1580px] mx-auto px-4 sm:px-6 xl:px-8 w-full">
-          <div className="flex items-center justify-between gap-3 xl:gap-6 flex-nowrap">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-8 w-full">
+          <div className="flex items-center justify-between gap-4 xl:gap-6 flex-nowrap">
             
             {/* BRAND LOGO */}
-            <Link to="/" className="flex items-center gap-3 sm:gap-4 group shrink-0">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-brand-gold to-brand-goldHover flex items-center justify-center shadow-[0_0_22px_rgba(235,173,33,0.45)] group-hover:scale-105 transition-transform duration-200 shrink-0">
+            <Link to="/" className="flex items-center gap-3.5 sm:gap-4 group shrink-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-brand-gold to-brand-goldHover flex items-center justify-center shadow-[0_0_24px_rgba(235,173,33,0.45)] group-hover:scale-105 transition-transform duration-200 shrink-0">
                 <Layers className="w-7 h-7 sm:w-8 sm:h-8 text-brand-navy" />
               </div>
               <div>
@@ -82,13 +82,13 @@ export default function Header({ onOpenQuote }) {
             </Link>
 
             {/* DESKTOP NAVIGATION (All in One Single Clean Line) */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5 flex-nowrap shrink-0" aria-label="Primary Navigation">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-3 flex-nowrap shrink-0" aria-label="Primary Navigation">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `px-3 xl:px-3.5 py-2.5 text-xs xl:text-sm font-semibold transition-all relative whitespace-nowrap shrink-0 flex items-center ${
+                    `px-3 xl:px-4 py-2.5 text-xs xl:text-[14px] font-semibold transition-all relative whitespace-nowrap shrink-0 flex items-center ${
                       isActive
                         ? 'text-brand-gold font-bold'
                         : 'text-slate-200 hover:text-white'
@@ -111,13 +111,13 @@ export default function Header({ onOpenQuote }) {
               ))}
             </nav>
 
-            {/* ACTION AREA: Phone + Quote CTA + Index Button */}
-            <div className="flex items-center gap-3 sm:gap-3.5 xl:gap-4 shrink-0">
+            {/* ACTION AREA: Phone + Quote CTA + Mobile-Only Index Toggle */}
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
               
               {/* Direct Phone Helpline (Desktop) */}
               <a
                 href={`tel:${businessConfig.contact.phonePrimary}`}
-                className="hidden xl:flex items-center gap-2 text-xs xl:text-sm font-mono text-slate-200 hover:text-brand-gold transition-colors pr-1 whitespace-nowrap shrink-0"
+                className="hidden xl:flex items-center gap-2.5 text-xs xl:text-sm font-mono text-slate-200 hover:text-brand-gold transition-colors pr-1 whitespace-nowrap shrink-0"
                 title="Direct Factory Helpline"
               >
                 <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
@@ -135,13 +135,13 @@ export default function Header({ onOpenQuote }) {
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
-              {/* Finnect Signature "Index" Toggle Button */}
+              {/* Finnect Signature "Index" Toggle Button - REMOVED ON DESKTOP, VISIBLE ONLY ON MOBILE & TABLET */}
               <button
                 onClick={() => setIsIndexOpen(true)}
-                className="group flex items-center gap-2.5 px-4 sm:px-4.5 py-3 sm:py-3.5 rounded-xl border border-white/20 hover:border-brand-gold bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-all text-xs font-mono font-bold tracking-wider cursor-pointer whitespace-nowrap shrink-0"
+                className="lg:hidden group flex items-center gap-2 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-white/20 hover:border-brand-gold bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white transition-all text-xs font-mono font-bold tracking-wider cursor-pointer whitespace-nowrap shrink-0"
                 aria-label="Open Site Index Directory"
               >
-                <span className="hidden sm:inline whitespace-nowrap font-bold">INDEX</span>
+                <span className="hidden sm:inline whitespace-nowrap">INDEX</span>
                 <span className="flex flex-col gap-1 items-end w-4 shrink-0">
                   <span className="w-4 h-0.5 bg-brand-gold rounded-full" />
                   <span className="w-2.5 h-0.5 bg-white group-hover:w-4 transition-all rounded-full" />
